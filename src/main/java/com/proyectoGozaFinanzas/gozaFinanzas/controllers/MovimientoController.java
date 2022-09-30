@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-public class movimientoController {
+public class MovimientoController {
 
     @RequestMapping(value = "movimiento/{id}")
     public Movimiento getMovimiento(@PathVariable Long id){
