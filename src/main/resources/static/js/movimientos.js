@@ -6,7 +6,7 @@ $(document).ready(function(){
 
 async function cargarMovimientos(){
 
-    const request = await fetch('movimientos',{
+    const request = await fetch('api/movimientos',{
     method: 'GET',
     headers:{
         'Accept': 'application/json',
@@ -15,9 +15,12 @@ async function cargarMovimientos(){
     });
     const movimientos = await request.json();
 
+
+
     let listadoHtml = '';
     for (let movimiento of movimientos){
-    let movimientoHtml = '<tr><td>'+movimiento.id+'</td><td>'+movimiento.movimiento+'</td><td>'+movimiento.fecha+'</td><td>'+movimiento.monto+'</td><td>'+movimiento.categoria+'</td><td>'+movimiento.descripcion+'</td><td><button type="button" class="btn btn-success">Editar</button><button type="button" class="btn btn-danger">Eliminar</button></td></tr>';
+    let botonEliminar = '<button onclick="eliminarMovimiento('+ movimiento.id +')" type="button" class="btn btn-danger">Eliminar</button>';
+    let movimientoHtml = '<tr><td>'+movimiento.id+'</td><td>'+movimiento.movimiento+'</td><td>'+movimiento.fecha+'</td><td>'+movimiento.monto+'</td><td>'+movimiento.categoria+'</td><td>'+movimiento.descripcion+'</td><td>'+ botonEliminar +'</td></tr>';
     listadoHtml += movimientoHtml;
 
     }
@@ -25,4 +28,21 @@ async function cargarMovimientos(){
 
 document.querySelector('#movimientos tbody').outerHTML = listadoHtml;
 
+}
+
+async function eliminarMovimiento(id){
+
+ if (!confirm('Desea eleminar este movimiento?')){
+    return;
+ }
+
+ const request = await fetch('api/movimientos/' +id,{
+    method: 'DELETE',
+    headers:{
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+    }
+    });
+
+    location.reload()
 }

@@ -1,59 +1,33 @@
 package com.proyectoGozaFinanzas.gozaFinanzas.models;
 
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "movimientos")
 public class Movimiento {
 
+    @Getter @Setter @Column(name = "id")
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Getter @Setter @Column(name = "movimiento")
     private String movimiento;
+
+    @Getter @Setter @Column(name = "fecha")
     private String fecha;
+
+    @Getter @Setter @Column(name = "monto")
     private String monto;
+
+    @Getter @Setter @Column(name = "categoria")
     private String categoria;
+
+    @Getter @Setter @Column(name = "descripcion")
     private String descripcion;
 
-    public Long getId() {
-        return id;
-    }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getMovimiento() {
-        return movimiento;
-    }
-
-    public void setMovimiento(String movimiento) {
-        this.movimiento = movimiento;
-    }
-
-    public String getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
-    }
-
-    public String getMonto() {
-        return monto;
-    }
-
-    public void setMonto(String monto) {
-        this.monto = monto;
-    }
-
-    public String getCategoria() {
-        return categoria;
-    }
-
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
 }

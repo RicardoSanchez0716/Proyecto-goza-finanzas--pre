@@ -22,14 +22,14 @@
                 <!--USERNAME-->
                 <div class="username">
                     <label for="username">Inicia sesion</label>
-                    <input class="form-control" type="text" placeholder="Username">                
+                    <input class="form-control" id="txtEmail" type="text" placeholder="Email">
                 </div>
                 
                 <!--PASSWORD-->
               
-                <input class="form-control" type="password" placeholder="Password">
+                <input class="form-control" id="txtPassword" type="password" placeholder="Password">
     
-                <a class="btn btn-primary" href="#" role="button">Login</a>
+                <a onclick="iniciarSesion()" href="#" class="btn btn-primary" href="#" role="button">Login</a>
     
                 <a class= link href="./registro.html">Registrate</a>
             </form>
@@ -46,5 +46,6 @@
               >
             </h2>
           </footer>
+        <script src="js/login.js"></script>
     </body>
     </html>

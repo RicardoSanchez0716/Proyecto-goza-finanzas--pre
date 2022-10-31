@@ -39,20 +39,20 @@
         <div class="crearMovimiento">
           
           <h1 class="textoCrear">Crear Movimiento</h1>
-          <form >
+          <form>
               <!--USERNAME-->
               <div class="username">
-              <input class="form-control" type="text" placeholder="Movimiento">
-              <input class="form-control" type="text" placeholder="dd/mm/aa">
-              <input class="form-control" type="number" placeholder="Monto">
-              <select class="form-control" placeholder="Monto">
+              <input class="form-control" type="text" id="txtMovimiento" placeholder="Movimiento">
+              <input class="form-control" type="date" id="txtFecha" placeholder="dd/mm/aa">
+              <input class="form-control" type="number" id="txtMonto" placeholder="Monto">
+              <select class="form-control" id="txtCategoria" placeholder="Monto">
                 <option selected>Categoria</option>
                 <option>Ingreso</option>
                 <option>Egreso</option>
               </select>
-              <textarea placeholder="Descripcion" class="form-control" cols="80" rows="6"></textarea>
+              <textarea placeholder="Descripcion" class="form-control" id="txtDescripcion" cols="80" rows="6"></textarea>
   
-              <a class="btn btn-primary" href="#" role="button">Crear Movimiento</a>
+              <a onclick="crearMovimientos()" href="#" class="btn btn-primary" href="#" role="button">Crear Movimiento</a>
               
           </form>
       
@@ -71,5 +71,8 @@
           >
         </h2>
       </footer>
+
+        <script src="js/crearMovimientos.js"></script>
+
     </body> 
 </html>

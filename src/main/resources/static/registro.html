@@ -17,15 +17,15 @@
         <div class="login-registro">
             <img class="avatar-registro" src="img/logo.png" alt="logo">
             <h1 class="registrate">Registrate</h1>
-            <form >
+            <form>
                 <!--USERNAME-->
                 <div class="username">
-                <input class="form-control" type="text" placeholder="Nombre">
-                <input class="form-control" type="text" placeholder="Apellido">
-                <input class="form-control" type="email" placeholder="Email">
-                <input class="form-control" type="password" placeholder="Contraseña">
-    
-                <a class="btn btn-primary" href="#" role="button">Registrar</a>
+                <input class="form-control" id="txtNombre" type="text" placeholder="Nombre">
+                <input class="form-control" id="txtApellido" type="text" placeholder="Apellido">
+                <input class="form-control" id="txtEmail" type="email" placeholder="Email">
+                <input class="form-control" id="txtPassword" type="password" placeholder="Contraseña">
+
+                <a onclick="registroUsuario()" href="#" class="btn btn-primary" role="button">Registrar</a>
                 <span class="tienes-cuenta">¿Tienes una cuenta?</span>
                 <a class= link href="./login.html"> Ingresa</a>
             </form>
@@ -42,5 +42,6 @@
               >
             </h2>
           </footer>
+        <script src="js/registro.js"></script>
     </body> 
 </html>
